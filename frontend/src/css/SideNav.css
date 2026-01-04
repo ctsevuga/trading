@@ -1,0 +1,65 @@
+/* Hide side menu on mobile */
+@media (max-width: 768px) {
+  .side-nav {
+    display: none;
+  }
+}
+
+/* Desktop side nav */
+.side-nav {
+  width: 240px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #0f172a;
+  color: #fff;
+  padding-top: 80px; /* so it sits below your main header */
+  box-shadow: 2px 0 12px rgba(0, 0, 0, 0.3);
+  z-index: 999;
+}
+
+.side-nav-inner {
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+}
+
+.side-nav-title {
+  margin-bottom: 25px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #38bdf8;
+  text-transform: uppercase;
+}
+
+.side-nav-menu {
+  list-style: none;
+  padding-left: 0;
+}
+
+.side-nav-link {
+  text-decoration: none;
+  color: #e2e8f0;
+  font-size: 1rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 10px;
+  border-radius: 8px;
+  transition: 0.25s ease;
+}
+
+.side-nav-link:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #38bdf8;
+}
+
+.side-icon {
+  font-size: 1.2rem;
+}
+.main-content {
+  transition: margin-left 0.3s ease;
+}
+

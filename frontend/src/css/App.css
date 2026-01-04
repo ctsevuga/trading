@@ -1,0 +1,130 @@
+.hover-link {
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.hover-link:hover {
+  color: #198754 !important; /* Bootstrap success green */
+  transform: translateY(-1px);
+}
+
+.navbar-light .navbar-brand span {
+  letter-spacing: 0.5px;
+}
+
+.navbar-light .nav-link {
+  font-size: 0.95rem;
+}
+/* NAVBAR WRAPPER */
+.header {
+  width: 100%;
+  background: linear-gradient(90deg, #4caf50, #2196f3);
+  padding: 10px 0;
+}
+
+/* NAVBAR */
+.navbar {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* BRAND */
+.nav-brand .brand-text {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+/* MOBILE MENU BUTTON */
+.menu-toggle {
+  background: none;
+  border: none;
+  color: #fff;
+  display: none;
+}
+
+/* NAV ITEMS */
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-menu li {
+  display: flex;
+  align-items: center;
+}
+
+/* LINKS */
+.nav-link {
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 500;
+
+  padding: 8px 14px;
+  border-radius: 8px;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  transition: 0.2s ease-in-out;
+}
+
+/* HOVER EFFECT */
+.nav-link:hover {
+  background: rgba(255, 255, 255, 0.25);
+  color: #fff;
+}
+
+/* ICON STYLE */
+.icon {
+  font-size: 1.2rem;
+}
+  /* Applies on desktop only */
+@media (min-width: 768px) {
+  .content-with-sidenav {
+    margin-left: 240px; /* Match your SideNav width */
+    padding: 20px;
+  }
+}
+
+/* MOBILE STYLES */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    cursor: pointer;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 65px;
+    right: 0;
+    background: linear-gradient(180deg, #4caf50, #2196f3);
+    width: 230px;
+
+    flex-direction: column;
+    padding: 20px;
+
+    display: none;
+    border-radius: 0 0 0 10px;
+    box-shadow: -3px 3px 10px rgba(0,0,0,0.2);
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .nav-link {
+    padding: 12px;
+    width: 100%;
+  }
+
+
+}
+

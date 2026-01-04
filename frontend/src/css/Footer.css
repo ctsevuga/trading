@@ -1,0 +1,77 @@
+.footer-container {
+  width: 100%;
+  padding: 30px 15px;
+  background: linear-gradient(135deg, #6e8efb, #a777e3, #ff8a63);
+  background-size: 300% 300%;
+  animation: gradientMove 8s ease infinite;
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.footer-content {
+  width: 100%;
+  max-width: 1100px;
+  text-align: center;
+}
+
+.footer-brand .brand-text {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.brand-subtitle {
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+.footer-contact {
+  margin: 15px 0;
+  font-size: 1rem;
+  opacity: 0.95;
+}
+
+.footer-contact p {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 5px 0;
+  font-weight: 500;
+}
+
+.footer-socials {
+  margin: 18px 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.footer-socials a {
+  font-size: 1.3rem;
+  color: white;
+  transition: 0.3s;
+}
+
+.footer-bottom {
+  margin-top: 12px;
+  opacity: 0.9;
+  font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .footer-contact p {
+    font-size: 0.9rem;
+  }
+
+  .brand-text {
+    font-size: 1.6rem;
+  }
+}

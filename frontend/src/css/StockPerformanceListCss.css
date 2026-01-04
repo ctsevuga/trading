@@ -1,0 +1,9 @@
+@media (max-width: 600px) {
+  .MuiCardContent-root {
+    padding: 16px;
+  }
+
+  .MuiTypography-body2 {
+    font-size: 14px;
+  }
+}
