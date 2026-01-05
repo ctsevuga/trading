@@ -33,6 +33,21 @@ const Header = () => {
       icon: <FaListAlt className="icon" />,
     },
     {
+      label: "India Stock Market Today News",
+      path: "/TodayMarketNews",
+      icon: <FaListAlt className="icon" />,
+    },
+    {
+      label: "India Stock Market News",
+      path: "/MarketNews",
+      icon: <FaListAlt className="icon" />,
+    },
+    {
+      label: "India Stock Market High Impact News",
+      path: "/HighImpactMarketNews",
+      icon: <FaListAlt className="icon" />,
+    },
+    {
       label: "Know Metrics",
       path: "/MetricsList",
       icon: <FaListAlt className="icon" />,

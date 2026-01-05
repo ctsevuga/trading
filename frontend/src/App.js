@@ -16,6 +16,10 @@ import MetricsList from "./screens/MetricsList";
 import MetricDetail from "./screens/MetricDetail";
 import MetricsByCategory from "./screens/MetricsByCategory";
 
+import MarketNews from "./screens/MarketNews";
+import HighImpactMarketNews from "./screens/HighImpactMarketNews";
+import TodayMarketNews from "./screens/TodayMarketNews";
+
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -38,10 +42,15 @@ function App() {
           <Route path="/StockMarketNews" element={<StockMarketNews />} />
           <Route path="/news/:id" element={<NewsDetail />} />
 
-          {/* News */}
+          {/* Metrics */}
           <Route path="/MetricsList" element={<MetricsList />} />
           <Route path="/metric-detail/:id" element={<MetricDetail />} />
           <Route path="/MetricsCategory" element={<MetricsByCategory />} />
+
+          {/* Market News */}
+          <Route path="/MarketNews" element={<MarketNews />} />
+          <Route path="/HighImpactMarketNews" element={<HighImpactMarketNews />} />
+          <Route path="/TodayMarketNews" element={<TodayMarketNews />} />
           
         </Routes>
       </div>

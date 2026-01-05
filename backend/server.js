@@ -7,7 +7,7 @@ import connectDB from "./config/db.js";
 // Import existing routes
 import stockPerformanceRoute from "./routes/stockPerformanceRoute.js";
 
-
+import marketNewsRoutes from "./routes/marketNewsRoutes.js";
 // Import new routes for Metric and StockMarketNews
 import metricRoutes from "./routes/metricRoutes.js";
 import stockMarketNewsRoutes from "./routes/stockMarketNewsRoutes.js";
@@ -31,7 +31,7 @@ app.use(cookieParser());
 
 // ----------------- API ROUTES -----------------
 app.use("/api/stock", stockPerformanceRoute);
-
+app.use("/api/market-news", marketNewsRoutes);
 
 // Add the new routes for Metric and StockMarketNews
 app.use("/api/metrics", metricRoutes);  // Route for metrics
