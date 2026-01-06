@@ -9,11 +9,20 @@ import MarketNews from "../models/MarketNewsModel.js";
 
 export const getAllMarketNews = async (req, res) => {
   try {
-    const { startDate, endDate } = req.query;
+    const {
+      startDate,
+      endDate,
+      newsSession,
+      market,
+      sentiment,
+      impactLevel,
+    } = req.query;
 
     const filter = { isActive: true };
 
-    // Date range filter (tradingDate)
+    /* -----------------------------
+       Trading Date Range Filter
+    ------------------------------ */
     if (startDate || endDate) {
       filter.tradingDate = {};
 
@@ -26,8 +35,44 @@ export const getAllMarketNews = async (req, res) => {
       }
     }
 
-    const news = await MarketNews.find(filter)
-      .sort({ tradingDate: -1, impactLevel: -1, publishedAt: -1 });
+    /* -----------------------------
+       Market Session Filter
+       PRE_MARKET | MARKET_HOURS | POST_MARKET
+    ------------------------------ */
+    if (newsSession) {
+      filter.newsSession = newsSession;
+    }
+
+    /* -----------------------------
+       Market Filter
+       NIFTY | SENSEX | GLOBAL | COMMODITY
+    ------------------------------ */
+    if (market) {
+      filter.market = market;
+    }
+
+    /* -----------------------------
+       Sentiment Filter
+       POSITIVE | NEGATIVE | NEUTRAL
+    ------------------------------ */
+    if (sentiment) {
+      filter.sentiment = sentiment;
+    }
+
+    /* -----------------------------
+       Impact Level Filter
+       HIGH | MEDIUM | LOW
+    ------------------------------ */
+    if (impactLevel) {
+      filter.impactLevel = impactLevel;
+    }
+
+    const news = await MarketNews.find(filter).sort({
+      tradingDate: -1,
+      newsSession: 1,     // PRE_MARKET → MARKET → POST
+      impactLevel: -1,
+      publishedAt: -1,
+    });
 
     res.status(200).json({
       success: true,
@@ -42,6 +87,7 @@ export const getAllMarketNews = async (req, res) => {
     });
   }
 };
+
 
 
 /**

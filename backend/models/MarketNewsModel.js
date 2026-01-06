@@ -58,6 +58,13 @@ const MarketNewsSchema = new mongoose.Schema(
       required: true,
       index: true // 🔥 fast daily queries
     },
+    newsSession: {
+  type: String,
+  enum: ["PRE_MARKET", "MARKET_HOURS", "POST_MARKET"],
+  required: true,
+  index: true,
+},
+
 
     tags: [
       {
@@ -70,6 +77,7 @@ const MarketNewsSchema = new mongoose.Schema(
       default: true
     }
   },
+  
   {
     timestamps: true // createdAt, updatedAt
   }
